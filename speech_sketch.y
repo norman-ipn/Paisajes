@@ -1,4 +1,3 @@
-
 %{
 #include <stdio.h>
 %}
@@ -11,19 +10,29 @@
 %%
 
 cmd: cmds	{ printf("cmd \n"); }
+; 
+cmds: number shape size pos 
+   | number shape pos
+;
 
-cmds: number shape size pos | number shape pos
+number:	ONE 
+| TWO
+;
 
-number:	ONE | TWO
+shape:	TRE 
+| CLO
+;
 
-shape:	TRE | CLO
+size:	SMA
+| MED 
+| LAR
+;
 
-size:	SMA | MED | LAR
-
-pos:	LEF | CEN | RIG
-
+pos:	LEF 
+| CEN 
+| RIG
+;
 %%
-
 
 int main(int argc, char **argv) {
 	yy_scan_string(argv[1]);
