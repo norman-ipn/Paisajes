@@ -1,16 +1,21 @@
-EXPRESION="(a|b)"
-run  
-run:regex2nfa 
-	./regex2nfa $(EXPRESION)
-regex2nfa:main.c regex2nfa.c nfa.c list.c
-	gcc -std=c99 -o regex2nfa main.c regex2nfa.c nfa.c list.c
-atm.dot:regex2nfa
-	./regex2nfa $(EXPRESION) > atm.dot
-atm.png:atm.dot
-	dot atm.dot -Tpng -o atm.png
+
+CC = gcc
+CFLAGS = -lfl
+#CFLAGS = `pkg-config --cflags --libs gtk+-3.0` -lfl
+
+
+all: speech_sketch
+
+speech_sketch: speech_sketch.yy.c
+	$(CC) -o speech_sketch speech_sketch.tab.c speech_sketch.yy.c $(CFLAGS)
+
+speech_sketch.yy.c: speech_sketch.tab.h
+	flex -o speech_sketch.yy.c speech_sketch.l
+
+speech_sketch.tab.h: speech_sketch.y speech_sketch.l
+	bison -d speech_sketch.y
+
+.PHONY: clean
 clean:
-	rm regex2nfa
-	rm atm.dot
-	rm atm.png
-ver:atm.png
-	eog atm.png
+	rm -rf *o speech_sketch speech_sketch.tab.* speech_sketch.yy.c
+
