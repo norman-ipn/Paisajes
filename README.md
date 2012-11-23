@@ -7,13 +7,13 @@ como salida una imagen que contenga dicho paisaje.
 ## Idea
 El programa se dividira en cuatro partes que pueden cambiar a futuro:
 
-* Reconocimiento de voz usando [pocketsphinx](http://cmusphinx.sourceforge.net/wiki/)
+* Reconocimiento de voz usando sphinxpocket
 * Analisis lexico usando flex
 * Analisis sintactico usando bison
-* Despligue y dibujo usando [cairo](http://www.cairographics.org/)
+* Despligue y dibujo usando cairo y gtk
 
 ## Progreso
 Se subio la primera version de la la gramtica que reconoce comendos como:
 
-* un arbol chico derecha
-* dos nube izquierda
+* ./speech_sketch "un arbol chico izquierda"
+* ./speech_sketch "dos nube derecha"
