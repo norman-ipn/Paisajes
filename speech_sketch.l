@@ -1,11 +1,10 @@
 %{
 
-#include "speech_sketch.tab.h"
+  #include "speech_sketch.tab.h"
 
 %}
 
 %%
-
 un			  { return ONE; }
 dos			  { return TWO; }
 arbol		  { return TRE; }
@@ -18,5 +17,4 @@ izquierda	{ return LEF; }
 derecha		{ return RIG; }
 [ ]			  { /* ignore whitespace */ }
 .			    { printf("unknown character!!\n"); }
-
 %%
