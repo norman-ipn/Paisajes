@@ -14,7 +14,7 @@ mediano		{ return MED; }
 grande		{ return LAR; }
 centro		{ return CEN; }
 izquierda	{ return LEF; }
-derecha		{ return RIG; }
-[ ]			  { /* ignore whitespace */ }
-.			    { printf("unknown character!!\n"); }
+derecha	  { return RIG; }
+[ ]	  { /* ignore whitespace */ }
+.	  { printf(" Caracter desconocido %c (%d)!\n", *yytext, *yytext ); }
 %%

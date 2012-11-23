@@ -1,10 +1,11 @@
-
 CC = gcc
 CFLAGS = -lfl
-#CFLAGS = `pkg-config --cflags --libs gtk+-3.0` -lfl
-
 
 all: speech_sketch
+
+run: speech_sketch
+	./$< "un arbol centro"
+
 
 speech_sketch: speech_sketch.yy.c
 	$(CC) -o speech_sketch speech_sketch.tab.c speech_sketch.yy.c $(CFLAGS)
