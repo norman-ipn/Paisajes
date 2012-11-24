@@ -14,9 +14,9 @@
 
 %%
 
-sentencia: reservada variable /* eg: entorno ciudad; quitar casa */ { printf("\n regla reconocida...\n");}
-	| cantidad variable especificacion  /* eg: un arbol grande; una casa roja */ { printf("\n regla reconocida...\n");}
-	| variable especificacion /* eg: pasto pequeño: hombre grande */ { printf("\n regla reconocida...\n");}
+sentencia: reservada variable /* eg: entorno ciudad; quitar casa */ 
+	| cantidad variable especificacion  /* eg: un arbol grande; una casa roja */ 
+	| variable especificacion /* eg: pasto pequeño: hombre grande */ 
 	;
 
 reservada: ENTORNO 
@@ -64,18 +64,6 @@ numero:   UN
 
 %%
 
-int yylex() 
-{  
-yyerror (s)  /* Llamada por yyparse ante un error */ 
-     char *s; 
-{ 
-  printf ("%s\n", s); 
-} 
-main() 
-{ 
-  Acciones a ejecutar antes del analisis 
-  yyparse(); 
-  Acciones a ejecutar despues del analisis 
-} 
+
 
 
