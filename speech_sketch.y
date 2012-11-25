@@ -1,7 +1,10 @@
 %{
-#include <stdio.h>
+	#include <stdlib.h>
+	int yylex (void);
+	void yyerror (char const *);
 %}
 
+%token NUMERO /* Numero de elementos a dibujar. */
 %token ONE TWO
 %token TRE CLO
 %token SMA MED LAR
@@ -11,6 +14,7 @@
 
 cmd: cmds 	{ printf("\n cmd \n"); }
 ; 
+
 cmds: number shape size pos 
    | number shape pos   { printf("\n regla reconocida...\n");}
 ;
@@ -34,7 +38,9 @@ pos:	LEF
 ;
 %%
 
-int main(int argc, char **argv) {
+	#include <ctype.h>
+
+	int main(int argc, char **argv) {
 
 	if( argc < 2 )
         {
@@ -44,8 +50,8 @@ int main(int argc, char **argv) {
 	yy_scan_string(argv[1]);
 	yyparse();
 	return 0;
-}
+	}
 
-int yyerror(char *s) {
-	fprintf(stderr, "error: %s\n", s);
-}
+	int yyerror(char *s) {
+		fprintf(stderr, "error: %s\n", s);
+	}
