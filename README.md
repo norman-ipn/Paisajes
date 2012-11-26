@@ -14,7 +14,7 @@ El programa se dividira en cuatro partes que pueden cambiar a futuro:
 * Despligue y dibujo usando cairo y gtk
 
 ## Progreso
-Se subio la primera version de la la gramtica que reconoce comendos como:
+Se subio la primera version de la la gramtica que reconoce comandos como:
 
 * ./speech_sketch "un arbol chico izquierda"
 * ./speech_sketch "dos nube derecha"
