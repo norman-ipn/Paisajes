@@ -1,5 +1,5 @@
 %{
-  	#include "speech_sketch.tab.h"
+  	#include "gramatica.tab.h"
 	#include <stdlib.h>
 %}
 
@@ -11,16 +11,22 @@ NUMERO [0-9]
 		uulval=atoi(yytext);
 		return NUMERO;
 	}
-uno             { return ONE; }
-dos		{ return TWO; }
-arbol		{ return TRE; }
-nube		{ return CLO; }
-chico		{ return SMA; }
-mediano		{ return MED; }
-grande		{ return LAR; }
-centro		{ return CEN; }
-izquierda	{ return LEF; }
-derecha	  	{ return RIG; }
+uno             { return UNO; }
+dos		{ return DOS; }
+tres		{ return TRES; }
+cuatro		{ return CUATRO; }
+cinco		{ return CINCO; }
+arbol		{ return ARBOL; }
+nube		{ return NUBE; }
+chico		{ return CHICO; }
+mediano		{ return MEDIANO; }
+grande		{ return GRANDE; }
+centro		{ return CENTRO; }
+izquierda	{ return IZQUIERDA; }
+derecha	  	{ return DERECHA; }
+mujer		{ return MUJER; }
+nino		{ return NINO; }
+nina		{ return NINA; }
 [ ]	  	{ /* ignore whitespace */ }
 .	  	{ printf(" Caracter desconocido %c (%d)!\n", *yytext, *yytext ); }
 
