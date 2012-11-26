@@ -11,12 +11,15 @@
 %token ROJO AZUL CAFE ROSA NEGRO VERDE AMARILLO NARANJA 
 %token GRANDE NORMAL PEQUENO
 %token UN UNA DOS TRES CUATRO CINCO
+/* %token IZQUIERDA CENTRO DERECHA */ 
 
 %%
 
 sentencia: reservada variable /* eg: entorno ciudad; quitar casa */ 
 	| cantidad variable especificacion  /* eg: un arbol grande; una casa roja */ 
-	| variable especificacion /* eg: pasto pequeño: hombre grande */ 
+	| variable especificacion  /* eg: pasto pequeño: hombre grande */ 
+/*	| cantidad variable especificacion posicion  eg: un arbol grande a la derecha; una casa roja al centro */
+/*	| variable especificacion posicion eg: pasto pequeño izquierda; hombre grande a la izquierda */ 
 	;
 
 reservada: ENTORNO 
@@ -63,6 +66,10 @@ numero:   UN
 	| CUATRO
 	| CINCO
 	;
+
+/* posicion:   DERECHA  */
+/*	   |   CENTRO   */
+/*	   |   IZQUIERDA*/
 
 %%
 
