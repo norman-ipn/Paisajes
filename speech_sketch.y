@@ -5,37 +5,49 @@
 %}
 
 %token NUMERO /* Numero de elementos a dibujar. */
-%token ONE TWO
-%token TRE CLO
-%token SMA MED LAR
-%token LEF CEN RIG
+%token UN DOS TRES CUATRO CINCO
+%token ARBOL NUVE CASA PASTO HOMBRE MUJER NINO NINA 
+%token PEQUENO MEDIANO GRANDE
+%token IZQUIERDA CENTRO DERECHA
+%token ROJO AZUL CAFE ROSA NEGRO VERDE AMARILLO NARANJA 
 
 %%
 
 cmd: cmds 	{ printf("\n cmd \n"); }
 ; 
 
-cmds: number shape size pos 
-   | number shape pos   { printf("\n regla reconocida...\n");}
+cmds: numero objeto tamano posicion
+   | numero objeto posicion   { printf("\n regla reconocida...\n");}
 ;
 
-number:	ONE 
+numero:	UN 
 | TWO
 ;
 
-shape:	TRE 
-| CLO
+objeto:	ARBOL
+| NUVE
 ;
 
-size:	SMA
-| MED 
-| LAR
+tamano:	PEQUENO 
+| MEDIANO 
+| GRANDE
 ;
 
-pos:	LEF 
-| CEN 
-| RIG
+posicion:	IZQUIERDA 
+| CENTRO 
+| DERECHA
 ;
+
+color:	ROJO  
+| AZUL
+| CAFE
+| ROSA 
+| NEGRO
+| VERDE 
+| AMARILLO
+| NARANJA
+;
+
 %%
 
 	#include <ctype.h>
