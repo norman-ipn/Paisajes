@@ -11,7 +11,7 @@ Shape shape;
 
 
 %token UN DOS
-%token ARBOL NUBE BICI
+%token ARBOL NUBE BICI GATO PAJARO CONEJO
 %token CHICO MEDIANO GRANDE
 %token IZQUIERDA CENTRO DERECHA
 
@@ -32,6 +32,9 @@ number:	UN			{ shape.number = 1; }
 shape:	ARBOL		{ shape.name = "tree"; shape.posy = 400; }
 | NUBE				{ shape.name = "cloud"; shape.posy = 100; }
 | BICI				{ shape.name = "bicycle"; shape.posy = 400; }
+| GATO				{ shape.name = "cat"; shape.posy = 400; }
+| PAJARO			{ shape.name = "owl"; shape.posy = 400; }
+| CONEJO			{ shape.name = "rabbit"; shape.posy = 400; }
 ;
 
 size:	CHICO		{ shape.size = 0.3; }
