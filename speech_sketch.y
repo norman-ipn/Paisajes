@@ -10,10 +10,10 @@ Shape shape;
 %}
 
 
-%token UNO TWO
-%token TRE CLO BIC
-%token SMA MED LAR
-%token LEF CEN RIG
+%token UN DOS
+%token ARBOL NUBE BICI
+%token CHICO MEDIANO GRANDE
+%token IZQUIERDA CENTRO DERECHA
 
 
 %%
@@ -25,23 +25,23 @@ cmds: number shape size pos
 | number shape pos
 ;
 
-number:	UNO		{ shape.number = 1; }
-| TWO			{ shape.number = 2; }
+number:	UN			{ shape.number = 1; }
+| DOS					{ shape.number = 2; }
 ;
 
-shape:	TRE		{ shape.name = "tree"; shape.posy = 400; }
-| CLO			{ shape.name = "cloud"; shape.posy = 100; }
-| BIC			{ shape.name = "bicycle"; shape.posy = 400; }
+shape:	ARBOL		{ shape.name = "tree"; shape.posy = 400; }
+| NUBE				{ shape.name = "cloud"; shape.posy = 100; }
+| BICI				{ shape.name = "bicycle"; shape.posy = 400; }
 ;
 
-size:	SMA		{ shape.size = 0.3; }
-| MED			{ shape.size = 0.6; }
-| LAR			{ shape.size = 1.0; }
+size:	CHICO		{ shape.size = 0.3; }
+| MEDIANO		{ shape.size = 0.6; }
+| GRANDE			{ shape.size = 1.0; }
 ;
 
-pos:	LEF		{ shape.posx = 100; }
-| CEN			{ shape.posx = 480; }
-| RIG			{ shape.posx = 880; }
+pos:	IZQUIERDA		{ shape.posx = 100; }
+| CENTRO					{ shape.posx = 480; }
+| DERECHA				{ shape.posx = 880; }
 ;
 
 

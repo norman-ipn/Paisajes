@@ -14,17 +14,17 @@
 %%
 
 
-un			{ return UNO; }
-dos			{ return TWO; }
-arbol		{ return TRE; }
-nube		{ return CLO; }
-bici		{ return BIC; }
-chico		{ return SMA; }
-mediano		{ return MED; }
-grande		{ return LAR; }
-centro		{ return CEN; }
-izquierda	{ return LEF; }
-derecha	  { return RIG; }
+un				{ return UN; }
+dos			{ return DOS; }
+arbol			{ return ARBOL; }
+nube			{ return NUBE; }
+bici			{ return BICI; }
+chico			{ return CHICO; }
+mediano		{ return MEDIANO; }
+grande		{ return GRANDE; }
+centro			{ return CENTRO; }
+izquierda		{ return IZQUIERDA; }
+derecha	  	{ return DERECHA; }
 [ ]	  { /* ignore whitespace */ }
 .	  { printf(" Caracter desconocido %c (%d)!\n", *yytext, *yytext ); }
 
