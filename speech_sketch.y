@@ -1,58 +1,42 @@
 %{
-	#include <stdlib.h>
-	int yylex (void);
-	void yyerror (char const *);
+#include <stdio.h>
 %}
 
-%token NUMERO /* Numero de elementos a dibujar. */
-%token UN DOS TRES CUATRO CINCO
-%token ARBOL NUVE CASA PASTO HOMBRE MUJER NINO NINA 
-%token PEQUENO MEDIANO GRANDE
-%token IZQUIERDA CENTRO DERECHA
-%token ROJO AZUL CAFE ROSA NEGRO VERDE AMARILLO NARANJA 
+%token ONE TWO
+%token TRE CLO
+%token SMA MED LAR
+%token LEF CEN RIG
 
 %%
 
 cmd: cmds 	{ printf("\n cmd \n"); }
-; 
-
-cmds: numero objeto tamano posicion
-   | numero objeto posicion   { printf("\n regla reconocida...\n");}
+;
+cmds: number shape size pos
+| number shape pos		{ printf("\n regla reconocida...\n");}
 ;
 
-numero:	UN 
+number:	ONE
 | TWO
 ;
 
-objeto:	ARBOL
-| NUVE
+shape:	TRE
+| CLO
 ;
 
-tamano:	PEQUENO 
-| MEDIANO 
-| GRANDE
+size:	SMA
+| MED
+| LAR
 ;
 
-posicion:	IZQUIERDA 
-| CENTRO 
-| DERECHA
-;
-
-color:	ROJO  
-| AZUL
-| CAFE
-| ROSA 
-| NEGRO
-| VERDE 
-| AMARILLO
-| NARANJA
+pos:	LEF
+| CEN
+| RIG
 ;
 
 %%
 
-	#include <ctype.h>
 
-	int main(int argc, char **argv) {
+int main(int argc, char **argv) {
 
 	if( argc < 2 )
         {
@@ -62,8 +46,9 @@ color:	ROJO
 	yy_scan_string(argv[1]);
 	yyparse();
 	return 0;
-	}
+}
 
-	int yyerror(char *s) {
-		fprintf(stderr, "error: %s\n", s);
-	}
+
+int yyerror(char *s) {
+	fprintf(stderr, "error: %s\n", s);
+}
