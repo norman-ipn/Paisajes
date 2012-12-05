@@ -26,10 +26,10 @@ cmds: number shape size pos
 ;
 
 number:	UN			{ shape.number = 1; }
-| DOS					{ shape.number = 2; }
+| DOS				{ shape.number = 2; }
 ;
 
-shape:	ARBOL		{ shape.name = "tree"; shape.posy = 400; }
+shape:	ARBOL			{ shape.name = "tree"; shape.posy = 400; }
 | NUBE				{ shape.name = "cloud"; shape.posy = 100; }
 | BICI				{ shape.name = "bicycle"; shape.posy = 400; }
 | GATO				{ shape.name = "cat"; shape.posy = 400; }
@@ -37,14 +37,14 @@ shape:	ARBOL		{ shape.name = "tree"; shape.posy = 400; }
 | CONEJO			{ shape.name = "rabbit"; shape.posy = 400; }
 ;
 
-size:	CHICO		{ shape.size = 0.3; }
-| MEDIANO		{ shape.size = 0.6; }
+size:	CHICO			{ shape.size = 0.3; }
+| MEDIANO			{ shape.size = 0.6; }
 | GRANDE			{ shape.size = 1.0; }
 ;
 
 pos:	IZQUIERDA		{ shape.posx = 100; }
-| CENTRO					{ shape.posx = 480; }
-| DERECHA				{ shape.posx = 880; }
+| CENTRO			{ shape.posx = 480; }
+| DERECHA			{ shape.posx = 880; }
 ;
 
 
