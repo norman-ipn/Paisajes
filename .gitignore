@@ -1,0 +1,4 @@
+speech_sketch
+*.o
+speech_sketch.tab.*
+speech_sketch.yy.*
