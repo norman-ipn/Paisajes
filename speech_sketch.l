@@ -15,10 +15,13 @@
 
 
 un				{ return UN; }
-dos			{ return DOS; }
+dos			  { return DOS; }
 arbol			{ return ARBOL; }
 nube			{ return NUBE; }
 bici			{ return BICI; }
+gato      { return GATO; }
+conejo    { return CONEJO; }
+pajaro    { return PAJARO; }
 chico			{ return CHICO; }
 mediano		{ return MEDIANO; }
 grande		{ return GRANDE; }
