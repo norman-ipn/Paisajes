@@ -11,7 +11,7 @@ Shape shape;
 
 
 %token UN DOS
-%token ARBOL NUBE BICI GATO PAJARO CONEJO CASA HOMBRE MUJER
+%token ARBOL NUBE BICI GATO PAJARO CONEJO CASA HOMBRE MUJER AUTO MONO PANDA BANCA NINO
 %token CHICO MEDIANO GRANDE
 %token IZQUIERDA CENTRO DERECHA
 
@@ -38,6 +38,11 @@ shape:	ARBOL			{ shape.name = "tree"; shape.posy = 400; }
 | CASA				{ shape.name = "house"; shape.posy = 400; }
 | HOMBRE			{ shape.name = "man"; shape.posy = 400; }
 | MUJER				{ shape.name = "woman"; shape.posy = 400; }
+| AUTO				{ shape.name = "car"; shape.posy = 400; }
+| MONO				{ shape.name = "monkey"; shape.posy = 400; }
+| PANDA				{ shape.name = "panda"; shape.posy = 400; }
+| BANCA				{ shape.name = "bench"; shape.posy = 400; }
+| NINO				{ shape.name = "boy"; shape.posy = 400; }
 ;
 
 size:	CHICO			{ shape.size = 0.3; }
