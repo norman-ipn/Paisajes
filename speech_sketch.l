@@ -27,6 +27,12 @@ pajaro    { return PAJARO; }
 casa      { return CASA; }
 hombre    { return HOMBRE; }
 mujer     { return MUJER; }
+auto      { return AUTO; }
+mono      { retutn MONO; }
+panda     { return PANDA; }
+banca     { return BANCA; }
+nino      { return NINO; }
+
 
 /*tamano*/
 chico			{ return CHICO; }
