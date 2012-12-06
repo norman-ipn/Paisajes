@@ -22,6 +22,9 @@ bici			{ return BICI; }
 gato      { return GATO; }
 conejo    { return CONEJO; }
 pajaro    { return PAJARO; }
+casa      { return CASA; }
+hombre    { return HOMBRE; }
+mujer     { return MUJER; }
 chico			{ return CHICO; }
 mediano		{ return MEDIANO; }
 grande		{ return GRANDE; }
