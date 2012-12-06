@@ -11,7 +11,7 @@ Shape shape;
 
 
 %token UN DOS
-%token ARBOL NUBE BICI GATO PAJARO CONEJO
+%token ARBOL NUBE BICI GATO PAJARO CONEJO CASA HOMBRE MUJER
 %token CHICO MEDIANO GRANDE
 %token IZQUIERDA CENTRO DERECHA
 
@@ -35,6 +35,9 @@ shape:	ARBOL			{ shape.name = "tree"; shape.posy = 400; }
 | GATO				{ shape.name = "cat"; shape.posy = 400; }
 | PAJARO			{ shape.name = "owl"; shape.posy = 400; }
 | CONEJO			{ shape.name = "rabbit"; shape.posy = 400; }
+| CASA				{ shape.name = "house"; shape.posy = 400; }
+| HOMBRE			{ shape.name = "man"; shape.posy = 400; }
+| MUJER				{ shape.name = "woman"; shape.posy = 400; }
 ;
 
 size:	CHICO			{ shape.size = 0.3; }
