@@ -1,0 +1,75 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{Compilador de Paisajes}
+\author{Santana Ruiz Julio Carlos}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{OBJETIVO}
+
+El objetivo principal del proyecto consiste en crear un compilador en lenguaje C que sea capaz de generar un paisaje a través de una cadena determinada que nosotros como usuarios generemos.
+
+\section{JUSTIFICACION}
+
+La idea del proyecto surge a partir de diversas propuestas del profesor, tomamos ese proyecto de inmediato ya que nos pareció era el más interesante y acorde a lo que buscabamos realizar como trabajo final en el curso, inicialmente la cadena que generaría el paisaje en el compilador iba ser ingresada por teclado, pero para darle una mayor presentación e impacto al trabajo se pensó trabajar con cadenas generadas por medio de la voz, para así generar el paisaje con más comodidad al usuario.
+
+\section{INTRODUCCIÓN}
+
+{\bf Ubuntu} es un sistema operativo predominantemente enfocado en la facilidad de uso e instalación, la libertad de los usuarios, y los lanzamientos regulares (cada 6 meses). El nombre proviene del concepto africano ubuntu, que significa "humanidad hacia otros". También es el nombre de un movimiento humanista sudafricano. Ubuntu aspira a impregnar de esa mentalidad al mundo de las computadoras. El eslogan de Ubuntu "Linux para seres humanos" resume una de sus metas principales: hacer de Linux un sistema operativo más accesible y fácil de usar. El proyecto Ubuntu está totalmente basado en los principios del Software Libre y anima a que la gente use, mejore y distribuya software libre.
+Vi (Visual) es un programa informático que entra en la categoría de los editores de texto. Esto es así, pues a diferencia de un procesador de texto no ofrece herramientas para determinar visualmente cómo quedará el documento impreso. Es por esto que carece de opciones como centrado o justificación de párrafos, pero permite mover, copiar, eliminar o insertar caracteres con mucha versatilidad. Este tipo de programas es frecuentemente utilizado por programadores para escribir código fuente de software.\\
+
+{\bf Una terminal}, conocido también como consola es un dispositivo electrónico o electromecánico de hardware, usado para introducir o mostrar datos de una computadora o de un sistema de computación.\\
+
+{\bf GNU Bison} es un programa generador de analizadores sintácticos de propósito general perteneciente al proyecto GNU disponible para prácticamente todos los sistemas operativos, se usa normalmente acompañado de flex aunque los analizadores lexicos se pueden también obtener de otras formas.\\
+Bison convierte la descripción formal de un lenguaje, escrita como una gramática libre de contexto LALR, en un programa en C, C++, o Java que realiza análisis sintáctico. Es utilizado para crear analizadores para muchos lenguajes, desde simples calculadoras hasta lenguajes complejos. Para utilizar Bison, es necesaria experiencia con la sintaxis usada para describir gramáticas.\\
+
+El {\bf analizador lexico} es un autómata finito determinista que reconoce el lenguaje generado por las expresiones regulares correspondientes a las unidades sintácticas del lenguaje.\\
+{\bf Flex} es una herramienta que traduce la especificación de un analizador léxico a un programa escrito en C que lo implementa.Para especificarlo usaremos expresiones regulares a las que se puede asociar acciones escritas en C. Cada vez que el analizador encuentra en la cadena de entrada una secuencia que encaja en una de las expresiones regulares especificadas, ejecutará la acción que le hallamos asociado.\\
+
+{\bf CMU Sphinx} (acortado como Sphinx), es el término general para describir un grupo de sistemas de reconocimiento de voz desarrollado en la Universidad de Carnegie Mellon. Incluye una serie de programas para reconocimiento de voz (Sphinx 2 - 4) y un entrenador modelo acústico (SphinxTrain).\\
+Sphinx abarca una serie de sistemas de software, inicio como sphinx 1, luego se produjeron las versiones 2, 3, 4 y Pocket Sphinx, todas tienen aplicaciones diferentes, aunque su función es la misma, el reconomiento del habla.\\
+La forma común de reconocer el habla es la siguiente: se toma la forma de onda, que se dividió en declaraciones por silencios luego se trata de reconocer lo que se está diciendo en cada enunciado. Para ello queremos aprovechar todas las posibles combinaciones de palabras y tratar de coincidir con el audio. Después se elige la mejor combinación que se asemeja a la combinación de palabras.\\
+
+{\bf Git} es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente. Al principio, Git se pensó como un motor de bajo nivel sobre el cual otros pudieran escribir la interfaz de usuario o front end como Cogito o StGIT. Sin embargo, Git se ha convertido desde entonces en un sistema de control de versiones con funcionalidad plena. Hay algunos proyectos de mucha relevancia que ya usan Git, en particular, el grupo de programación del núcleo Linux.\\
+
+{\bf Cairo}  es una biblioteca gráfica de la API GTK+ usada para proporcionar imágenes basadas en gráficos vectoriales. Aunque cairo es una API independiente de dispositivos, está diseñado para usar aceleración por hardware cuando esté disponible. Cairo deja disponibles numerosas primitivas de imágenes de segunda dimensión. A pesar de que está escrito en C, existen implementaciones en otros lenguajes de programación, incluyendo C++, Common Lisp, Haskell, Java, Python, Perl, Ruby, Scheme (Guile, Chicken), Smalltalk y muchos otros.\\
+
+{\bf GTK+} o The GIMP Toolkit es un conjunto de bibliotecas multiplataforma para desarrollar interfaces gráficas de usuario (GUI), principalmente para los entornos gráficos GNOME, XFCE y ROX aunque también se puede usar en el escritorio de Windows, Mac OS y otros. Inicialmente fueron creadas para desarrollar el programa de edición de imagen GIMP, sin embargo actualmente se usan bastante por muchos otros programas en los sistemas GNU/Linux. Junto a Qt es una de las bibliotecas más populares para X Window System.\\
+
+\section{HERRAMIENTAS}
+
+\begin{enumerate}
+
+\item Ubuntu OS.\\
+\item Vi, editor de textos de Ubuntu.\\
+\item Flex, analizador léxico.\\
+\item GNU Bison, analizador sintáctico.\\
+\item CMU Sphnix.\\
+\item Git.\\
+\item Cairo, biblioteca.\\
+\item GTK+, biblioteca\\
+\item Terminal.\\
+
+\end{enumerate}
+
+\section{DESARROLLO}
+
+\begin{enumerate}
+\item La entrada de este proyecto es una descripción de un paisaje (que debe coincidir con la gramática declarada en él).\\
+\item Primero hay que definir el tipo de paisaje que se quiere generar por ejemplo una ciudad, un bosque, una isla, etc.\\
+\item Realizar y modelar algunas expresiones regulares (archivo .l) y realizar la gramática correspondiente para éstas (archivo .y), apoyandonos de los analizadores léxicos y sintácticos, flex y bison respectivamente.\\
+\item Adecuar un formato y una estructura adecuada para la salida del programa que en éste caso es una imagen compuesta a partir de otras (paisaje).
+\item Para poder generar la salida o la imagen del paisaje final generado por medio de la cadena inicial (voz) nos apoyamos en dos bibliotecas del lenguaje C, éstas fueron Cairo y Gtk, que nos ayudan al despligue y dibujo del paisaje o salida del compilador.
+\item Codificar el archivo makefile que nos permita ejecutar todos los códigos involucrados en la creación del compilador de paisajes.\\ 
+\end{enumerate}
+
+\end{document}
